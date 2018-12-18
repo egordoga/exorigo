@@ -40,4 +40,22 @@ public class UserDao implements IUserDao {
         String sql = "insert into users (name, last_name, pass) values(?, ?, ?)";
         jdbcTemplate.update(sql, new Object[]{user.getName(), user.getLastName(), user.getPass()});
     }
+
+    @Override
+    public void update(User user) {
+        String sql = "update  users set name=?, last_name=? where id=?";
+        jdbcTemplate.update(sql, new Object[]{user.getName(), user.getLastName(), user.getId()});
+    }
+
+    @Override
+    public void delete(Long id) {
+        String sql = "delete from users where id=?";
+        jdbcTemplate.update(sql, id);
+    }
+
+    @Override
+    public User find(Long id) {
+        String sql = "select * from users where id=" + id;
+        return jdbcTemplate.queryForObject(sql, new UserRowMapper());
+    }
 }

@@ -12,4 +12,10 @@ public interface IUserServise {
     List<User> findUsersByLastName(String lastMame);
 
     void addUser(User user);
+
+    void updateUser(User user);
+
+    void deleteUser(Long id);
+
+    User findUser(Long id);
 }

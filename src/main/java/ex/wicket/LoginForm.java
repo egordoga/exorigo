@@ -14,8 +14,8 @@ public class LoginForm extends Form<LoginPage> {
     @SpringBean
     private UserService userService;
 
-    private TextField nameField;
-    private TextField lastNameField;
+    private TextField<String> nameField;
+    private TextField<String> lastNameField;
     private PasswordTextField passField;
 
     public LoginForm(String id) {

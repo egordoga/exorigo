@@ -10,7 +10,7 @@ public class LoginPage extends WebPage {
         super(parameters);
         add(new LoginForm("loginForm"));
 
-        Link link = new Link("link") {    //Здесь высвечивает ошибку, однако программа "билдится" и работает нормально
+        Link link = new Link<String>("link") {
             @Override
             public void onClick() {
                 setResponsePage(UserPage.class);
