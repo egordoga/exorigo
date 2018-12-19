@@ -1,3 +1,4 @@
+create database test;
 create table users (
   id bigserial primary key,
   name varchar (50),
